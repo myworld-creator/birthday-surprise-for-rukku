@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpg" href="favicon.png">
+<title>Forever Memories ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(135deg,#ffe6f0,#fff0f5,#ffe4ec,#fff);
+    overflow-x:hidden;
+    padding:20px;
+    position:relative;
+}
+p{
+    font-family: cursive;
+    color: #555;
+}
+
+/* Animated Background */
+
+.bg-blur{
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:pink;
+    filter:blur(120px);
+    opacity:0.25;
+    border-radius:50%;
+    z-index:0;
+    animation:moveBg 10s infinite alternate;
+}
+
+.bg1{
+    top:-50px;
+    left:-50px;
+}
+
+.bg2{
+    bottom:-50px;
+    right:-50px;
+    background:#ff85b3;
+}
+
+@keyframes moveBg{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(50px,50px);
+    }
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-50px;
+    animation:float 10s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* Main */
+
+.container{
+    position:relative;
+    z-index:2;
+    max-width:470px;
+    margin:auto;
+}
+
+/* Heading */
+
+.main-title{
+    text-align:center;
+    color:#ff4f9a;
+    font-size:42px;
+    font-family:cursive;
+    margin-bottom:15px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 5px pink;
+    }
+
+    to{
+        text-shadow:0 0 25px hotpink;
+    }
+
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    line-height:1.9;
+    margin-bottom:35px;
+    font-size:17px;
+}
+
+/* Cards */
+
+.video-card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    border-radius:30px;
+    padding:18px;
+    margin-bottom:35px;
+    box-shadow:0 10px 30px rgba(255,105,180,0.2);
+    animation:fadeUp 1s ease;
+    transition:0.4s;
+    border:2px solid rgba(255,255,255,0.4);
+}
+
+.video-card:hover{
+    transform:translateY(-8px) scale(1.02);
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+video{
+    width:100%;
+    border-radius:22px;
+    border:4px solid #ffd6e8;
+}
+
+/* Titles */
+
+.video-title{
+    text-align:center;
+    margin-top:15px;
+    color:#ff4f9a;
+    font-size:26px;
+    font-weight:bold;
+}
+
+/* Text */
+
+.video-text{
+    text-align:center;
+    margin-top:12px;
+    color:#555;
+    line-height:2;
+    font-size:17px;
+}
+
+/* Final Message */
+
+.final-message{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    padding:28px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(255,105,180,0.2);
+    margin-top:25px;
+}
+
+.final-message h2{
+    color:#ff4f9a;
+    margin-bottom:15px;
+    font-family:cursive;
+    font-size:30px;
+}
+
+.final-message p{
+    color:#666;
+    line-height:2;
+    font-size:17px;
+}
+
+/* Button */
+
+.open-btn{
+    width:100%;
+    margin-top:35px;
+    padding:18px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff4f9a,#ff85b3);
+    color:white;
+    font-size:19px;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 8px 25px rgba(255,105,180,0.4);
+    animation:pulse 2s infinite;
+}
+
+.open-btn:hover{
+    transform:scale(1.05);
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* Fade Animation */
+
+.fade{
+    animation:fade 2s ease;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+</style>
+</head>
+
+<body class="fade">
+
+<!-- Background Blur -->
+
+<div class="bg-blur bg1"></div>
+<div class="bg-blur bg2"></div>
+
+<!-- Floating Hearts -->
+
+<div class="hearts">
+
+<span style="left:10%">❤️</span>
+<span style="left:25%; animation-delay:2s;">💕</span>
+<span style="left:45%; animation-delay:4s;">💖</span>
+<span style="left:65%; animation-delay:1s;">💞</span>
+<span style="left:80%; animation-delay:3s;">✨</span>
+
+</div>
+
+<div class="container">
+
+<!-- Heading -->
+
+<h1 class="main-title">
+Memories with Dudu ❤️
+</h1>
+
+<p class="subtitle">
+Dudu is not just a memory but a beautiful feeling that will never fade with time✨   
+<br>Every smile, every moment, and every little memory still brings warmth to the heart
+✨
+</p>
+
+<!-- Video 1 -->
+
+<div class="video-card">
+
+<video controls autoplay muted loop>
+<source src="./GIF/1.mp4" type="video/mp4">
+</video>
+
+<div class="video-title">
+Pure Happiness 😂
+</div>
+
+<div class="video-text">Happiness dikh nhi raha😂 Bss wo dudu k man me hota hai jbb wo mujhe maarti hai  😆❤️.
+</div>
+
+</div>
+
+<!-- Video 2 -->
+
+<div class="video-card">
+
+<video controls muted loop>
+<source src="./GIF/2.mp4" type="video/mp4">
+</video>
+
+<div class="video-title">
+Cute Little Chaos 
+</div>
+
+<div class="video-text">
+A little madness 😅  
+a little over excitement ✨  
+but full of real love and genuine feelings ❤️
+</div>
+
+</div>
+
+<!-- Video 3 -->
+
+<div class="video-card">
+
+<video controls muted loop>
+<source src="./GIF/4.mp4" type="video/mp4">
+</video>
+
+<div class="video-title">
+Special Smiles 😊
+</div>
+
+<div class="video-text">
+Some smiles are magical 💕  
+they make ordinary moments feel unforgettable ❤️✨
+</div>
+
+</div>
+
+<!-- Video 4 -->
+
+<div class="video-card">
+
+<video controls muted loop>
+<source src="./GIF/5.mp4" type="video/mp4">
+</video>
+
+<div class="video-title">
+Drama Queen Moments 😂
+</div>
+
+<div class="video-text">
+Gussa bhi full attitude me but 2 minute baad fir se cute ban jati haiNot every bond needs daily talks 😊  
+❤️ Dudu ka mood swings hi sabse entertaining part hai😂.
+</div>
+
+</div>
+
+<!-- Video 5 -->
+
+<div class="video-card">
+
+<video controls muted loop>
+<source src="./GIF/6.mp4" type="video/mp4">
+</video>
+
+<div class="video-title">
+Forever Connection 💞
+</div>
+
+<div class="video-text">
+Thodi fights😂 <br> thoda attitude but connection aisa hai jo kabhi fade nhi hoga ❤️✨. 
+</div>
+
+</div>
+
+<!-- Final Emotional Message -->
+
+<div class="final-message">
+
+<h2>
+A Small Piece Of My Heart ❤️
+</h2>
+
+<p>
+Thank you for every smile 😊  
+every laugh 😂  
+every caring moment 💖  
+and every beautiful memory ✨  
+<br>
+Pata nhi tumhe ehsaas hai ya nhi, 
+but tum sirf ek person nhi ho mere liye.
+❤️ Tum meri un feelings ka hissa ho jo shayad kabhi words me explain hi nhi ho skta.😊💕
+ <br> Kuch log sirf memories me reh jaty hai but tum mere dil me ho meri rukku Love you so much.
+  <br> Chahe life kitni bhi change ho jaye,
+   but tumhare sath bitaye hue moments hamesha mera heart ke sabse precious memories rahenge. 
+   <hr> Love You Rukku😊💕
+
+</p>
+
+</div>
+
+<!-- Final Button -->
+
+<button class="open-btn"
+onclick="window.location.href='last.html'">
+
+You & Me 
+
+</button>
+
+</div>
+
+<script>
+
+/* Floating Hearts */
+
+const hearts = document.querySelector('.hearts');
+
+setInterval(() => {
+
+    const heart = document.createElement('span');
+
+    const emojis = ['❤️','💕','💖','💞','✨'];
+
+    heart.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+    heart.style.left = Math.random()*100 + 'vw';
+
+    heart.style.fontSize = (Math.random()*20 + 15) + 'px';
+
+    heart.style.animationDuration = (Math.random()*5 + 5) + 's';
+
+    hearts.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    },10000);
+
+},700);
+
+</script>
+
+</body>
+</html>
