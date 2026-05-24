@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Password Screen */
+
+#loginPage{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#1a0026,#32004d,#120018);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    z-index:99999;
+}
+
+/* Floating Hearts */
+
+#loginPage::before,
+#loginPage::after{
+    content:"💖";
+    position:absolute;
+    font-size:80px;
+    opacity:0.15;
+    animation:float 6s infinite ease-in-out;
+}
+
+#loginPage::after{
+    right:10%;
+    bottom:10%;
+    animation-delay:3s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-25px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Login Box */
+
+.login-box{
+    width:340px;
+    padding:40px 30px;
+    border-radius:28px;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 0 40px rgba(255,0,120,0.2);
+    color:white;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.lock{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.login-box h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.login-box p{
+    color:#f0d9ff;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* Input */
+
+.login-box input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    margin-bottom:18px;
+    background:rgba(255,255,255,0.12);
+    color:white;
+    font-size:16px;
+    text-align:center;
+}
+
+.login-box input::placeholder{
+    color:#ddd;
+}
+
+/* Button */
+
+.login-box button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#ff4f9f,#ff0055);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-box button:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 20px rgba(255,0,120,0.5);
+}
+
+/* Main Website Hidden */
+
+#mainWebsite{
+    display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Cute Password Page -->
+
+<div id="loginPage">
+
+<div class="login-box">
+
+<div class="lock">🔒💖</div>
+
+<h2>Private Love Space</h2>
+
+<p>Enter the secret password to continue ✨</p>
+
+<input type="password" id="pass" placeholder="Enter Password">
+
+<button onclick="checkPassword()">
+Unlock Our World 💕
+</button>
+
+</div>
+
+</div>
+
+<!-- Main Website -->
+
+<div id="mainWebsite">
+
+<audio id="bgmusic" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<div class="cursor"></div>
+
+<div class="container">
+
+<h1>Happy Birthday Rukku💗</h1>
+
+<div class="greeting"></div>
+
+<button class="cta-button">
+Click to Enter Our World 💕
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+var password = "HappybirthdayRukku";
+
+var userPass = document.getElementById("pass").value;
+
+if(userPass === password){
+
+document.getElementById("loginPage").style.display = "none";
+
+document.getElementById("mainWebsite").style.display = "block";
+
+document.getElementById("bgmusic").play();
+
+}else{
+
+alert("Wrong Password ❌");
+
+}
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
